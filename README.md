@@ -27,15 +27,6 @@ every `rm` or `pip install`. What I want is a backstop for the one time in a
 hundred where the agent reaches somewhere it shouldn't. This gives me that
 without turning every session into a click-through.
 
-A configurable safety net that intercepts file operations and bash commands
-before they execute. It asks for confirmation when the agent tries to write
-outside the project directory, read credential files, modify git internals, or
-use force flags like `rm -f`. Think of it as a seatbelt — not a guarantee,
-but it catches the careless mistakes that happen when you're moving fast.
-
-**Why:** I've had agents overwrite files in my home directory or `rm -rf`
-something they shouldn't have. This stops those before they happen, with a
-sensible default policy that stays out of the way during normal work.
 
 ### `@jerryan/pi-pyvenv`
 
