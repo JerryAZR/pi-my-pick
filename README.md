@@ -15,6 +15,18 @@ care about most: **safety**, **Python ergonomics**, **task tracking**, and
 
 ### `@jerryan/pi-sanity`
 
+A configurable safety net that stays **out of the way** most of the time.
+Unlike most guardrail extensions, Pi-Sanity is designed for low friction: it
+lets the agent get on with normal work and only asks for confirmation on
+genuinely suspicious actions — writing outside the project, reading credential
+files, or force-deleting things. Not a whitelist or a sandbox; just a light
+tap on the shoulder when something looks off.
+
+**Why:** I trust the agent's ability. I don't want an approval dialog for
+every `rm` or `pip install`. What I want is a backstop for the one time in a
+hundred where the agent reaches somewhere it shouldn't. This gives me that
+without turning every session into a click-through.
+
 A configurable safety net that intercepts file operations and bash commands
 before they execute. It asks for confirmation when the agent tries to write
 outside the project directory, read credential files, modify git internals, or
