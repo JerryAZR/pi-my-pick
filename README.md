@@ -84,13 +84,17 @@ runs.
 
 Replaces the built-in `read` and `edit` tools with a hash-anchored workflow.
 Every line returned by `read` carries a short content hash (`LINE#HASH:`). When
-the agent edits, it references these hashes instead of raw text. If the file
-has changed since the last `read`, the edit is rejected with fresh anchors for
-immediate retry. No silent relocations, no editing stale content.
+the agent edits, it references these hashes instead of reciting the exact text.
+If the file has changed since the last `read`, the edit is rejected with fresh
+anchors for immediate retry.
 
-**Why:** The default `edit` tool uses raw text matching, which breaks when the
-file shifts between the `read` and the `edit`. Hash-anchored edits are
-precise, atomic, and give the model a clear signal when it needs to re-read.
+**Why:** Still evaluating, but early results are promising. Agents no longer need
+to reproduce every newline and space in the to-be-replaced text — they just
+drop a hash reference. That alone seems to cut the failure rate on edits, and on
+longer multi-line changes it saves a noticeable chunk of output tokens (roughly
+half in the cases I've measured). No silent relocations, no editing stale
+content.
+
 
 ### `@jerryan/pi-subagent-lite`
 
