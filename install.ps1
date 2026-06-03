@@ -12,9 +12,8 @@ $ErrorActionPreference = "Stop"
 $extensions = @(
     "npm:@jerryan/pi-pyvenv"
     "npm:@jerryan/pi-todo-lite"
-    "npm:pi-wtf"
     "npm:@thinkscape/pi-status"
-    "npm:pi-hashline-edit"
+    "npm:@jerryan/pi-hashline-edit"
     "npm:@jerryan/pi-subagent-lite"
     "npm:@jerryan/pi-sanity"
 )

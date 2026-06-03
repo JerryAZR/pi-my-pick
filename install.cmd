@@ -16,15 +16,11 @@ if %errorlevel% neq 0 echo WARNING: failed to install pi-pyvenv
 call pi install npm:@jerryan/pi-todo-lite
 if %errorlevel% neq 0 echo WARNING: failed to install pi-todo-lite
 
-call pi install npm:pi-wtf
-if %errorlevel% neq 0 echo WARNING: failed to install pi-wtf
-
 call pi install npm:@thinkscape/pi-status
 if %errorlevel% neq 0 echo WARNING: failed to install pi-status
 
-call pi install npm:pi-hashline-edit
+call pi install npm:@jerryan/pi-hashline-edit
 if %errorlevel% neq 0 echo WARNING: failed to install pi-hashline-edit
-
 call pi install npm:@jerryan/pi-subagent-lite
 if %errorlevel% neq 0 echo WARNING: failed to install pi-subagent-lite
 

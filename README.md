@@ -53,21 +53,6 @@ tasks done when they've actually been completed.
 This one does exactly enough — track tasks, show them in the UI, and remind the
 agent to clean up — without fighting for the LLM's attention with 7 competing
 tools.
-
-### `pi-wtf`
-
-For the moment you realize you messed up.
-
-- `/fuck` — Abort the current run, rewind to before your last prompt, and
-  restore it in the editor so you can fix and resubmit.
-- `/fuck?` — Same recovery, but checks for typos and suggests a correction.
-- `/fuck!` — Destructively remove that prompt and its entire subtree from the
-  session file. Keeps your `/tree` clean of obvious mistakes.
-
-**Why:** I type prompts, hit enter, and immediately notice a typo or missing
-word. Before this, I was navigating `/tree`, forking, or copy-pasting. Now it's
-one command.
-
 ### `@thinkscape/pi-status`
 
 A configurable status bar that lives in your terminal tab title while pi is
@@ -80,21 +65,10 @@ while the agent runs.
 know which is which at a glance. The progress bar is a nice bonus for long
 runs.
 
-### `pi-hashline-edit`
+### `@jerryan/pi-hashline-edit`
+Replace the built-in `read` and `edit` tools with a hash-anchored workflow. Every line returned by `read` carries a short content hash (`LINE#HASH:`). When the agent edits, it references these hashes instead of reciting the exact text. If the file has changed since the last `read`, the edit is rejected with fresh anchors for immediate retry.
 
-Replaces the built-in `read` and `edit` tools with a hash-anchored workflow.
-Every line returned by `read` carries a short content hash (`LINE#HASH:`). When
-the agent edits, it references these hashes instead of reciting the exact text.
-If the file has changed since the last `read`, the edit is rejected with fresh
-anchors for immediate retry.
-
-**Why:** Still evaluating, but early results are promising. Agents no longer need
-to reproduce every newline and space in the to-be-replaced text — they just
-drop a hash reference. That alone seems to cut the failure rate on edits, and on
-longer multi-line changes it saves a noticeable chunk of output tokens (roughly
-half in the cases I've measured). No silent relocations, no editing stale
-content.
-
+**Why:** Agents no longer need to reproduce every newline and space in the to-be-replaced text — they just drop a hash reference. That cuts the failure rate on edits, and on longer multi-line changes it saves a noticeable chunk of output tokens. No silent relocations, no editing stale content.
 
 ### `@jerryan/pi-subagent-lite`
 
