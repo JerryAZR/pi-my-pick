@@ -13,20 +13,11 @@ care about most: **safety**, **Python ergonomics**, **task tracking**, and
 
 ## Extensions
 
-### `@jerryan/pi-sanity`
+### `@jerryan/pi-bash-wrap`
 
-A configurable safety net that stays **out of the way** most of the time.
-Unlike most guardrail extensions, Pi-Sanity is designed for low friction: it
-lets the agent get on with normal work and only asks for confirmation on
-genuinely suspicious actions — writing outside the project, reading credential
-files, or force-deleting things. Not a whitelist or a sandbox; just a light
-tap on the shoulder when something looks off.
+Replaces the built-in `bash` tool with one that runs commands inside `bubblewrap`, a lightweight sandbox. The agent still sees normal `bash` output and exit codes, but the command executes in an isolated mount/user namespace with restricted filesystem access.
 
-**Why:** I trust the agent's ability. I don't want an approval dialog for
-every `rm` or `pip install`. What I want is a backstop for the one time in a
-hundred where the agent reaches somewhere it shouldn't. This gives me that
-without turning every session into a click-through.
-
+**Why:** On Linux, this is the simplest way to keep the agent from accidentally writing outside the project or reading sensitive files. It doesn't ask for approval — it just prevents the action. Lower friction than a guardrail extension, stronger than nothing.
 
 ### `@jerryan/pi-pyvenv`
 

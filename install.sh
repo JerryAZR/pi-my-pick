@@ -24,7 +24,7 @@ extensions=(
     "npm:@thinkscape/pi-status"
     "npm:@jerryan/pi-hashline-edit"
     "npm:@jerryan/pi-subagent-lite"
-    "npm:@jerryan/pi-sanity"
+    "npm:@jerryan/pi-bash-wrap"
 )
 
 if ! command -v pi &>/dev/null; then
