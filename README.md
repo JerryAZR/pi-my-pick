@@ -17,7 +17,7 @@ care about most: **safety**, **Python ergonomics**, **task tracking**, and
 
 Replaces the built-in `bash` tool with one that runs commands inside `bubblewrap`, a lightweight sandbox. The agent still sees normal `bash` output and exit codes, but the command executes in an isolated mount/user namespace with restricted filesystem access.
 
-**Why:** On Linux, this is the simplest way to keep the agent from accidentally writing outside the project. It doesn't ask for approval — it just prevents the action. Lower friction than a guardrail extension, stronger than nothing.
+**Why:** On Linux, this is the simplest way to keep the agent from accidentally writing outside the project. Most commands auto-approve silently; it only intervenes when a command tries to escape the sandbox, at which point it can ask or deny (configurable). Lower friction than a guardrail extension, stronger than nothing.
 ### `@jerryan/pi-sanity`
 
 A configurable safety net that stays **out of the way** most of the time. Unlike most guardrail extensions, Pi-Sanity is designed for low friction: it lets the agent get on with normal work and only asks for confirmation on genuinely suspicious actions — writing outside the project, reading credential files, or force-deleting things. Not a whitelist or a sandbox; just a light tap on the shoulder when something looks off.
