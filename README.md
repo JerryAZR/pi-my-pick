@@ -6,7 +6,7 @@ One-shot installers for my commonly-used pi extensions.
 
 These are the extensions I install on every machine. They don't depend on each
 other — you could pick and choose — but together they cover the four things I
-care about most: **safety**, **Python ergonomics**, **task tracking**, and
+care about most: **safety**, **Python ergonomics**, **UI polish**, and
 **recovery from mistakes**.
 
 ---
@@ -38,18 +38,6 @@ tool interception.
 that impossible without the agent even knowing it's happening. Pure
 infrastructure.
 
-### `@jerryan/pi-todo-lite`
-
-A lightweight task tracker with 6 tools and no architectural weight. No
-`in_progress` states, no dependency graphs, no subagent execution. Just
-`subject` + `description` + `done`. A persistent overlay widget shows pending
-tasks above the editor, and a periodic system-reminder nudges the agent to mark
-tasks done when they've actually been completed.
-
-**Why:** Heavier task trackers add ceremony that the LLM rarely uses correctly.
-This one does exactly enough — track tasks, show them in the UI, and remind the
-agent to clean up — without fighting for the LLM's attention with 7 competing
-tools.
 ### `@thinkscape/pi-status`
 
 A configurable status bar that lives in your terminal tab title while pi is

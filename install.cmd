@@ -13,8 +13,6 @@ echo Installing pi extensions...
 call pi install npm:@jerryan/pi-pyvenv
 if %errorlevel% neq 0 echo WARNING: failed to install pi-pyvenv
 
-call pi install npm:@jerryan/pi-todo-lite
-if %errorlevel% neq 0 echo WARNING: failed to install pi-todo-lite
 
 call pi install npm:@thinkscape/pi-status
 if %errorlevel% neq 0 echo WARNING: failed to install pi-status
